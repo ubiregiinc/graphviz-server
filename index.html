@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <textarea id='textarea' rows='40' cols='60'>
+digraph g{
+  login_3[
+    style = "filled";
+  ]
+  graph[
+    layout = dot;
+  ]
+"login_2" -> "login_1";
+"login_3" -> "login_1";
+"login_4" -> "login_2";
+
+  { rank = min; login_1;login_1; }
+  { rank = max; login_3;login_4; }
+}
+    </textarea>
+    <a href='#' id='get_png'>get png</a>
+    <div id='result'></div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script>
+    $(function() { 
+      $(document).on('click', '#get_png', function() { 
+        var url = 'http://localhost:4444';
+        var params = {
+          dataType: 'jsonp',
+          method: 'GET',
+          url: url,
+          timeout: 120 * 1000,
+          data: { body: $('#textarea').val() },
+        };
+        $.ajax(params).
+          done(function(data, textStatus, jqXHR) { 
+            console.log(data['error_msg'] );
+            if(data['error_msg'] == undefined) { 
+              $('#result').html(
+                'success' + 
+                "<img src='data:image/png;base64," + data['encoded_png'] + "'/>"
+              );
+            } else {
+              $('#result').html(
+                'error' + 
+                data['error_msg'].replace('\n', '<br>')
+              )
+            }
+          }).
+          fail(function(jqXHR, textStatus, errorThrown) {
+            alert(errorThrown);
+          })
+      })
+    });
+  </script>
+</html>
