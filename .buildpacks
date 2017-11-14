@@ -1,0 +1,2 @@
+heroku buildpacks:add heroku/ruby
+heroku buildpacks:add https://github.com/weibeld/heroku-buildpack-graphviz.git
