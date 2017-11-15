@@ -21,8 +21,9 @@ digraph g {
     crossorigin="anonymous"></script>
   <script>
     $(function() { 
-      $(document).on('click', '#get_png', function() { 
-        var url = 'http://localhost:4444';
+      $(document).on('click', '#get_png', function(e) {
+        e.preventDefault();
+        var url = 'https://demo-graphviz-server.herokuapp.com/';
         var params = {
           dataType: 'jsonp',
           method: 'GET',
