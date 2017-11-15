@@ -1,7 +1,8 @@
 # GraphvizServer
 * DOT言語のコードを送ると画像が返ってくる
 * herokuで動く
-
+  * heroku管理画面からgraphvizのbuildpackを追加しなければいけない 
+    * https://github.com/weibeld/heroku-buildpack-graphviz.git
 # デモサイト
 https://jiikko.github.io/graphviz-server
 
