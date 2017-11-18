@@ -12,7 +12,7 @@ digraph g {
   "login_4" -> "login_2";
 }
     </textarea>
-    <a href='#' id='get_png'>get png</a>
+    <a href='#' id='get_png'>ページ読み込み中...</a>
     <div id='result'></div>
   </body>
   <script
@@ -20,6 +20,7 @@ digraph g {
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
   <script>
+    $('#get_png').text('画像を取得する');
     $(function() { 
       $(document).on('click', '#get_png', function(e) {
         e.preventDefault();
