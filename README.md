@@ -4,7 +4,7 @@
   * heroku管理画面からgraphvizのbuildpackを追加しなければいけない 
     * https://github.com/weibeld/heroku-buildpack-graphviz.git
 # デモサイト
-https://jiikko.github.io/graphviz-server
+https://ubiregiinc.github.io/graphviz-server/index.html
 
 # 仕様
 * index.html にサンプルコードがあります
