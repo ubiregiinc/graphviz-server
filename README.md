@@ -13,5 +13,10 @@ https://ubiregiinc.github.io/graphviz-server/index.html
 * 画像のレンダリング(dotコマンド)に失敗した場合は `error_msg`に理由が書いています
 * ステータスコードは常に200を返します
 
+# 動作確認方法
+
+- docker compose up を実行すると5005番ポートで起動します
+- test.html をブラウザで開くと、5005番ポートにリクエストを投げて、画像を表示します
+
 ## LICENSE
 MIT
