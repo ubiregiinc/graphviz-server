@@ -2,6 +2,10 @@ require 'sinatra'
 require 'open3'
 require 'base64'
 
+before do
+  response.headers['Access-Control-Allow-Origin'] = '*'
+end
+
 post '/' do
   content_type :js
   response = {}
