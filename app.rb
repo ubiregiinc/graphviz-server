@@ -2,7 +2,7 @@ require 'sinatra'
 require 'open3'
 require 'base64'
 
-get '/' do
+post '/' do
   content_type :js
   response = {}
   if params[:body].nil?
