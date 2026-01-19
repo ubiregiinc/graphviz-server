@@ -7,7 +7,7 @@ before do
 end
 
 post '/' do
-  content_type :js
+  content_type :json
   response = {}
   if params[:body].nil?
     set_response_for_empty_params(response)
@@ -25,7 +25,7 @@ post '/' do
       EOH
     end
   end
-  "#{params[:callback]}(#{response.to_json})"
+  response.to_json
 end
 
 def set_response_for_empty_params(res)
